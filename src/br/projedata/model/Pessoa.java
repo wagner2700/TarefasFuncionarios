@@ -1,7 +1,6 @@
 package br.projedata.model;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Pessoa {
     private String nome ;
@@ -27,6 +26,13 @@ public class Pessoa {
 
     public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
+    }
+
+    public int getIdade(){
+        LocalDate dataAtual = LocalDate.now();
+
+        int idade = dataAtual.getYear() - dataNascimento.getYear();
+        return idade;
     }
 
     @Override
